@@ -1,6 +1,6 @@
 'use client';
 
-import { NavbarProps } from '@/types';
+import { NavbarProps } from '../types';
 
 export default function Navbar({ activeSection, setActiveSection }: NavbarProps) {
   const sections = [
