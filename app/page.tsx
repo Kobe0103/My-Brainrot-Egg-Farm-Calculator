@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Mutations from './components/Mutations';
 import Brainrots from './components/Brainrots';
 import BrainrotDetails from './components/BrainrotDetails';
-import { Brainrot, Mutation } from '@/components/types';
+import { Brainrot, Mutation } from '@/app/types';
 import './globals.css';
 
 export default function Home() {
