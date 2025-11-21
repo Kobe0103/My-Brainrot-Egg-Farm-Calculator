@@ -2,11 +2,11 @@ export interface Brainrot {
   id: number;
   name: string;
   type: string;
-  rarity: 'Basic' | 'Rare';
+  rarity: 'Basic' | 'Rare' | 'Epic' | 'Legendary';
   emoji: string;
   mutation: string | null;
   mutationBonus: number;
-  baseIncome: number;
+  baseIncome: number | string;
   level?: number;
 }
 
@@ -18,7 +18,6 @@ export interface Mutation {
   brainrots: number[];
 }
 
-// ... rest of the interfaces remain the same
 export interface NavbarProps {
   activeSection: string;
   setActiveSection: (section: string) => void;
