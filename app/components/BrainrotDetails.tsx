@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { BrainrotDetailsProps } from '@/types';
+import { BrainrotDetailsProps } from '../types';
 
 export default function BrainrotDetails({ brainrot }: BrainrotDetailsProps) {
   const [level, setLevel] = useState(brainrot?.level || 1);
@@ -33,10 +33,12 @@ export default function BrainrotDetails({ brainrot }: BrainrotDetailsProps) {
   }
 
   const calculateStats = () => {
-    const baseIncome = brainrot.baseIncome || 10;
-    const rarityBonus = brainrot.rarity === 'Rare' ? 50 : 0; // 50% bonus for rare
+    const baseIncome = typeof brainrot.baseIncome === 'number' ? brainrot.baseIncome : 0;
+    const rarityBonus = brainrot.rarity === 'Rare' ? 50 : 
+                       brainrot.rarity === 'Epic' ? 100 :
+                       brainrot.rarity === 'Legendary' ? 200 : 0;
     const mutationBonus = brainrot.mutationBonus || 0;
-    const levelBonus = (level - 1) * 50; // 5% per level
+    const levelBonus = (level - 1) * 5;
     
     const totalBonus = rarityBonus + mutationBonus + levelBonus;
     const totalIncome = baseIncome * (1 + totalBonus / 100);
@@ -105,7 +107,7 @@ export default function BrainrotDetails({ brainrot }: BrainrotDetailsProps) {
             <div className="stats-grid">
               <div className="stat">
                 <span>Base Income</span>
-                <span>{brainrot.baseIncome || 10}/s</span>
+                <span>{typeof brainrot.baseIncome === 'number' ? brainrot.baseIncome : 0}/s</span>
               </div>
               {stats.rarityBonus > 0 && (
                 <div className="stat">
@@ -204,6 +206,16 @@ export default function BrainrotDetails({ brainrot }: BrainrotDetailsProps) {
         .rarity-tag.basic {
           border-color: #6B7280;
           color: #6B7280;
+        }
+
+        .rarity-tag.epic {
+          border-color: #8B5CF6;
+          color: #8B5CF6;
+        }
+
+        .rarity-tag.legendary {
+          border-color: #F59E0B;
+          color: #F59E0B;
         }
 
         .mutation-tag {
