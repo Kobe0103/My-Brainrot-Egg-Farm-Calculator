@@ -1,6 +1,6 @@
 'use client';
 
-import { BrainrotsProps } from '@/types';
+import { BrainrotsProps } from '../types';
 
 export default function Brainrots({ brainrots, selectedBrainrot, onSelectBrainrot, currentMutation }: BrainrotsProps) {
   return (
@@ -215,4 +215,5 @@ export default function Brainrots({ brainrots, selectedBrainrot, onSelectBrainro
       `}</style>
     </div>
   );
+
 }
