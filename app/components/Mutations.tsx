@@ -1,6 +1,6 @@
 'use client';
 
-import { MutationsProps } from '../types';
+import { MutationsProps } from '@/types';
 
 export default function Mutations({ mutations, selectedMutation, onSelectMutation }: MutationsProps) {
   return (

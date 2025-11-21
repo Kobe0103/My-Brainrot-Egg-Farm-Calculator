@@ -1,6 +1,6 @@
 'use client';
 
-import { BrainrotsProps } from '../types';
+import { BrainrotsProps } from '@/types';
 
 export default function Brainrots({ brainrots, selectedBrainrot, onSelectBrainrot, currentMutation }: BrainrotsProps) {
   return (
@@ -129,23 +129,58 @@ export default function Brainrots({ brainrots, selectedBrainrot, onSelectBrainro
         }
 
         .rarity-badge.rare {
-          border-color: #3B82F6;
-          color: #3B82F6;
+          border-color: #37b5d5;
+          color: #37b5d5;
         }
 
         .rarity-badge.basic {
-          border-color: #6B7280;
-          color: #6B7280;
+          border-color: #36cb28;
+          color: #36cb28;
         }
-
+        
         .rarity-badge.epic {
-          border-color: #8B5CF6;
-          color: #8B5CF6;
+          border-color: #f230fc;
+          color: #f230fc;
         }
 
         .rarity-badge.legendary {
-          border-color: #F59E0B;
-          color: #F59E0B;
+          border-color: #f3af1f;
+          color: #f3af1f;
+        }
+
+        .rarity-badge.mythic {
+          border-color: #d43249;
+          color: #d43249;
+        }
+
+        .rarity-badge.secret {
+          border-color: #d8deea;
+          color: #d8deea;
+        }
+
+        .rarity-badge.divine {
+          border-color: #ffd72a;
+          color: #ffd72a;
+        }
+
+        .rarity-badge.godly {
+          border-color: #ffd72a;
+          color: #ffd72a;
+        }
+
+        .rarity-badge.admin {
+          border-color: #ff1a63;
+          color: #ff1a63;
+        }
+
+        .rarity-badge.spooky {
+          border-color: #804008;
+          color: #804008;
+        }
+
+        .rarity-badge.exclusive {
+          border-color: #d642e4;
+          color: #d642e4;
         }
 
         .brainrot-info h3 {
